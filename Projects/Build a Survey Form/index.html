@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div>
+      <div class="container">
+        <header class="header">
+          <h1 id="title">Contact Us Today!</h1>
+          <p id="description">Short description about form</p>
+        </header>
+        <form action="#" id="survey-form" method="post" class="s_form">
+          <!-- Какую услугу хочет -->
+          <div class="option_container">
+            <p>Mark options you want</p>
+            <div class="option-checkbox_countainer">
+              <div class="checkbox_item">
+                <label>Full marketing</label>
+                <input
+                  type="checkbox"
+                  name="option_checkbox"
+                  value="fullmarketing"
+                  class="input_checkbox"
+                />
+              </div>
+
+              <div class="checkbox_item">
+                <label>Google ADS</label>
+                <input
+                  type="checkbox"
+                  name="option_checkbox"
+                  value="googleads"
+                  class="input_checkbox"
+                />
+              </div>
+
+              <div class="checkbox_item">
+                <label>SEO</label>
+                <input
+                  type="checkbox"
+                  name="option_checkbox"
+                  value="seo"
+                  class="input_checkbox"
+                />
+              </div>
+
+              <div class="checkbox_item">
+                <label>SMM</label>
+                <input
+                  type="checkbox"
+                  name="option_checkbox"
+                  value="smm"
+                  class="input_checkbox"
+                />
+              </div>
+
+              <div class="checkbox_item">
+                <label>Target ADS</label>
+                <input
+                  type="checkbox"
+                  name="option_checkbox"
+                  value="targetads"
+                  class="input_checkbox"
+                />
+              </div>
+
+              <div class="checkbox_item">
+                <label>Telegram ADS</label>
+                <input
+                  type="checkbox"
+                  name="option_checkbox"
+                  value="telegramads"
+                  class="input_checkbox"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- На какой регион реклама -->
+          <div class="select_container">
+            <p>Select your ADS region</p>
+            <select
+              name="region_select"
+              required
+              id="dropdown"
+              class="input_design"
+            >
+              <option value="" selected disabled>Make your choice</option>
+              <option value="fullcountry">Full country</option>
+              <option value="fewlargecity">A few large cities</option>
+              <option value="citymil">City millennial</option>
+              <option value="smallcity">Small city</option>
+              <option value="regionofcity">Some region of city</option>
+            </select>
+          </div>
+
+          <!-- Кто аудитория и кому продает -->
+          <div class="prod-area_container">
+            <label for="comments">What your product and audithory?:</label>
+            <textarea
+              name="comments"
+              id="comments"
+              placeholder="Write here"
+            ></textarea>
+          </div>
+
+          <!-- Бюджет рекламы -->
+          <div class="budget-rang_container">
+            <label for="budget_range">Select your budget</label>
+            <input
+              type="range"
+              id="budget_range"
+              min="500"
+              max="100000"
+              step="100"
+              value="50000"
+            />
+          </div>
+
+          <!-- Был опыт рекламы -->
+          <div class="test-radio_container">
+            <p>Do you test ADS yet?</p>
+
+            <div class="test-radio_item-container">
+              <div class="test-radio_item">
+                <label for="yes-ads" class="radio">
+                  <input
+                    class="radio-input"
+                    type="radio"
+                    value="yes"
+                    name="test_ads"
+                    id="yes-ads"
+                  />
+
+                  <span class="radio-custom" aria-hidden="true"></span>
+                  <span class="radio-text">Yes it is</span>
+                </label>
+              </div>
+
+              <div class="test-radio_item">
+                <label for="no-ads" class="radio">
+                  <input
+                    class="radio-input"
+                    type="radio"
+                    value="no"
+                    name="test_ads"
+                    id="no-ads"
+                  />
+                  <span class="radio-custom" aria-hidden="true"></span>
+                  <span class="radio-text">Not yet</span>
+                </label>
+              </div>
+
+              <div class="test-radio_item">
+                <label class="radio">
+                  <input
+                    type="radio"
+                    name="test_ads"
+                    value="no-answer"
+                    class="radio-input"
+                  />
+                  <span class="radio-custom" aria-hidden="true"></span>
+                  <span class="radio-text">Hard to answer</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <!-- Контактные данные -->
+          <div class="contact_container">
+            <p>Add your contact information</p>
+            <div class="contact-item">
+              <label for="name" id="name-label">Full name:</label>
+              <input
+                id="name"
+                type="text"
+                required
+                placeholder="Enter your full name"
+                class="input_design"
+                pattern="[A-Za-z\s]+"
+              />
+            </div>
+            <div class="contact-item">
+              <label for="email" id="email-label">E-mail:</label>
+              <input
+                id="email"
+                type="email"
+                required
+                placeholder="Enter your e-mail"
+                class="input_design"
+              />
+            </div>
+            <div class="contact-item">
+              <label for="phone">Phone#:</label>
+              <input
+                id="phone"
+                type="tel"
+                required
+                placeholder="Enter your phone number"
+                class="input_design"
+              />
+            </div>
+            <div class="contact-item">
+              <label for="website">Web site URL:</label>
+              <input
+                id="website"
+                type="url"
+                placeholder="Enter your website"
+                class="input_design"
+              />
+            </div>
+            <div class="contact-item">
+              <label for="number" id="number-label">Promocode:</label>
+              <input
+                id="number"
+                type="number"
+                name="promocode"
+                min="1"
+                max="100"
+                required
+                placeholder="Enter your promocode"
+                class="input_design"
+              />
+            </div>
+          </div>
+
+          <div class="button_container">
+            <button type="submit" id="submit" class="form_btn">Submit</button>
+            <button type="reset" id="reset" class="form_btn">Reset</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

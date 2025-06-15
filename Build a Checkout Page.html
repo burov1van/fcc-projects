@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Checkout Page</title>
+  </head>
+
+  <body>
+    <div>
+      <h1>Checkout</h1>
+      <section>
+        <h2>Your Cart</h2>
+
+        <figure>
+          <img
+            src="https://cdn.freecodecamp.org/curriculum/labs/cube.jpg"
+            alt="cube img"
+          />
+          <figcaption>
+            Rubik’s Cube
+            <p>29.99$</p>
+          </figcaption>
+        </figure>
+      </section>
+      <section>
+        <h2>Payment Information</h2>
+        <form action="">
+          <div>
+            <label for="card-name">Cardholder Name</label
+            ><input type="text" id="card-name" name="card-name" required aria-required="true"/>
+          </div>
+          <div>
+            <label for="card-number">Card Number</label
+            ><input
+              type="number"
+              id="card-number"
+              name="card-number"
+              required
+            />
+          </div>
+          <div>
+            <label for="card-date">Expiration Date</label
+            ><input type="date" id="card-date" name="card-date" required aria-required="true"/>
+          </div>
+          <div>
+            <label for="cvv-card">CVV secret code</label
+            ><input type="number" id="cvv-card" name="cvv-card" required />
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+    </div>
+  </body>
+</html>

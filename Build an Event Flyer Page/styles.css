@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 400;
+  background-color: #f8f9fa;
+  color: #343a40;
+}
+.container {
+  border: 1px solid #ced4da;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px 25px;
+  gap: 35px;
+  border-radius: 14px;
+  background-color: #e9ecef;
+  margin-top: 45px;
+}
+.title {
+  color: #212529;
+}
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 1px solid #343a40;
+  width: 100%;
+  justify-content: space-between;
+  border-radius: 14px;
+  padding: 20px 15px;
+  background-color: #cfd8dc;
+}
+.todo-list_item {
+  border: 1px solid #dee2e6;
+  border-radius: 14px;
+  background-color: #fdfdfe;
+  padding: 40px 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.todo-list_item:hover {
+  background-color: #e3f2fd;
+}
+
+.todo-list_input {
+  margin-right: 10px;
+}
+.todo-list-label {
+  font-size: 1.5rem;
+}
+.sub-item {
+  text-align: center;
+}
+.sub-item_item {
+}
+.sub-item-link {
+  text-decoration: none;
+  color: darkblue;
+}
+
+.sub-item-link:hover {
+  text-decoration: underline;
+  color: darkcyan;
+}
+
+.sub-item-link:visited {
+  color: rgb(100, 3, 112);
+}
+
+.sub-item-link:active {
+  color: rgb(12, 88, 2);
+}
+
+a:focus {
+  outline: 1px solid black;
+  outline-offset: 2px;
+}
+
+li {
+  list-style: none;
+}

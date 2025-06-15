@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Survey Form</title>
+  </head>
+
+  <body>
+    <h1 id="title">Find Your Ideal IT Career</h1>
+    <p id="description">Answer a few short questions to discover which IT profession suits you best.</p>
+    <form action="" id="survey-form">
+      <div>
+        <label for="name" id="name-label">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your name"
+          required
+        />
+      </div>
+      <div>
+        <label for="email" id="email-label">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+          required
+        />
+      </div>
+      <div>
+        <label for="number" id="number-label">Age</label>
+        <input type="number" name="number" id="number" max="20" min="2" placeholder="Age"/>
+      </div>
+
+      <div>
+        <label for="dropdown">How many people do you have?</label>
+        <select name="dropdown" id="dropdown">
+          <option value="" selected disabled>Take the right value</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </div>
+
+      <div>
+        <p>How much money do you have?</p>
+        <label>
+          Not have
+          <input type="radio" name="money-form" value="not-have" checked />
+        </label>
+        <label>
+          Have a little
+          <input type="radio" name="money-form" value="little-money" />
+        </label>
+        <label>
+          A lot of money
+          <input type="radio" name="money-form" value="lot-money" />
+        </label>
+      </div>
+
+      <div>
+        <label for="meal-option"> Which options do you want to choose?</label>
+
+        <select name="meal-option" id="meal-option">
+          <option value="all-inclusive">All inclusive</option>
+          <option value="half-board">Half board</option>
+          <option value="only breakfast">Only breakfast</option>
+          <option value="no-food" selected>Only room</option>
+        </select>
+      </div>
+
+      <div>
+        <p>Choose the options you need</p>
+        <label>
+          <input
+            type="checkbox"
+            name="option-to-choose[]"
+            value="parking"
+          />Parking
+        </label>
+        <label>
+          <input type="checkbox" name="option-to-choose[]" value="wifi" />Wi-Fi
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            name="option-to-choose[]"
+            value="fridgerator"
+          />Refrigerator
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            name="option-to-choose[]"
+            value="second-bed"
+          />Second bed
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            name="option-to-choose[]"
+            value="mini-bar"
+          />Mini bar
+        </label>
+      </div>
+
+      <div>
+        <label for="text-message">Write your message</label>
+        <textarea
+          name="text-message"
+          id="text-message"
+          cols="30"
+          rows="10"
+          placeholder="Please, write something"
+        ></textarea>
+      </div>
+
+      <p><button type="submit" id="submit">Submit form</button></p>
+    </form>
+  </body>
+</html>
