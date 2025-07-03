@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Prompt demo</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-variant-numeric: tabular-nums;
+        font-family: "Courier New", Courier, monospace;
+        font-weight: 700;
+        line-height: 1.5;
+        font-size: 20px;
+        margin: 0 auto;
+        padding: 50px;
+      }
+
+      h1,
+      h2 {
+        background-image: linear-gradient(
+          109.6deg,
+          rgba(228, 107, 232, 1) 11.2%,
+          rgba(87, 27, 226, 1) 96.7%
+        );
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        font-size: 20px;
+      }
+
+      .loader {
+        height: 50px;
+        width: 50px;
+      }
+
+      p {
+  text-align-last: right;
+  max-width: 550px;
+  margin-top: 50px;
+}
+
+p::first-letter {
+initial-letter: 2;
+margin: ;}
+    </style>
+  </head>
+
+  <body>
+    <div class="loader">
+      <svg fill="blue" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,20a9,9,0,1,1,9-9A9,9,0,0,1,12,21Z"
+        />
+        <rect x="11" y="6" rx="1" width="2" height="7">
+          <animateTransform
+            attributeName="transform"
+            type="rotate"
+            dur="9s"
+            values="0 12 12;360 12 12"
+            repeatCount="indefinite"
+          />
+        </rect>
+        <rect x="11" y="11" rx="1" width="2" height="9">
+          <animateTransform
+            attributeName="transform"
+            type="rotate"
+            dur="0.75s"
+            values="0 12 12;360 12 12"
+            repeatCount="indefinite"
+          />
+        </rect>
+      </svg>
+    </div>
+    <label for="name-input">Как тебя зовут?</label>
+    <input type="text" id="name-input" />
+    <button type="submit" id="name-button">Ok</button>
+    <h1 id="title">Привет, <span id="span-name"></span></h1>
+
+    <h2>How old are you?</h2>
+    <label for="age-input">Введи свой возраст</label>
+    <input type="number" id="age-input" />
+    <button type="submit" id="age-button">Ok</button>
+    <div>
+      <span id="age_text"></span>
+    </div>
+    <div>
+      <span id="age_valid_text"></span>
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam hic in
+      voluptatum deserunt tempora similique voluptas modi quibusdam ab sapiente!
+      Aperiam sit quo, suscipit labore atque hic voluptatum. Cupiditate, rem!
+    </p>
+    <script>
+      let inputName = document.getElementById("name-input");
+      let spanText = document.getElementById("span-name");
+      let sumbBtn = document.getElementById("name-button");
+      let ageInput = document.getElementById("age-input");
+      let ageBtn = document.getElementById("age-button");
+      let ageText = document.getElementById("age_text");
+      let ageValidText = document.getElementById("age_valid_text");
+      let inputAge = document.getElementById("age-input");
+
+      sumbBtn.addEventListener("click", function () {
+        let name = inputName.value.trim();
+        let firstName = name.split(" ")[0];
+        let secondName = name.split(" ")[1] || "";
+
+        if (
+          (firstName.toLowerCase() === "иван" ||
+            firstName.toLowerCase() === "буров") &&
+          (secondName === "" || secondName.toLowerCase() === "буров") &&
+          !(
+            firstName.toLowerCase() === "буров" &&
+            secondName.toLowerCase() === "буров"
+          )
+        ) {
+          spanText.textContent = "Крутой айтишник!";
+        } else if (
+          firstName.toLowerCase() === "ольга" &&
+          secondName.toLowerCase() === "чертович"
+        ) {
+          spanText.textContent = "самая любимая жена!";
+        } else {
+          spanText.textContent =
+            firstName.charAt(0).toUpperCase() +
+            firstName.slice(1).toLowerCase() +
+            "!";
+        }
+      });
+
+      inputName.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+          sumbBtn.click();
+        }
+      });
+
+      ageBtn.addEventListener("click", function () {
+        let text = ageInput.value;
+        ageText.textContent = text;
+        let score = 18 - text;
+        if (text >= 18 && text < 75) {
+          ageValidText.textContent = "Все ок";
+        } else {
+          ageValidText.textContent = `Гуляй еще ${score} лет`;
+        }
+      });
+
+      inputAge.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+          ageBtn.click();
+        }
+      });
+    </script>
+  </body>
+</html>
