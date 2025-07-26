@@ -105,7 +105,7 @@ while ((pos = str.indexOf("upon", pos + 1)) !== -1) {
 } */
 
 let name2 = "eco buste";
-let name4 = "go home"
+let name4 = "go home";
 let result = name2.includes("eco");
 console.log(result);
 console.log(
@@ -123,5 +123,18 @@ name2 = "eco buster lololo";
 let name5 = (name2 + " ").repeat(5);
 console.log(name5);
 let score = 5;
-score = (140 >= 1211);
+score = 140 >= 1211;
 console.log(score);
+
+function areYouPlayingBanjo(name) {
+  if (name.charAt(0).toLowerCase() === "r") {
+    name = name + " plays banjo";
+  } else {
+    name = name + " does not play banjo";
+  }
+
+  // Implement me
+  console.log(name);
+
+  return name;
+}

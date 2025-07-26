@@ -37,14 +37,30 @@
       }
 
       p {
-  text-align-last: right;
-  max-width: 550px;
-  margin-top: 50px;
-}
+        text-align-last: right;
+        max-width: 550px;
+        margin-top: 50px;
+      }
 
-p::first-letter {
-initial-letter: 2;
-margin: ;}
+      p::first-letter {
+        initial-letter: 2;
+      }
+
+      button {
+        padding: 12px 44px;
+        text-transform: uppercase;
+        background-color: yellowgreen;
+        color: aliceblue;
+        font-weight: 900;
+        font-size: 14px;
+      }
+
+      #lorem_text_input {
+        width: 50px;
+        height: 50px;
+        font-size: 26px;
+        text-align: center;
+      }
     </style>
   </head>
 
@@ -89,11 +105,17 @@ margin: ;}
     <div>
       <span id="age_valid_text"></span>
     </div>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam hic in
-      voluptatum deserunt tempora similique voluptas modi quibusdam ab sapiente!
-      Aperiam sit quo, suscipit labore atque hic voluptatum. Cupiditate, rem!
-    </p>
+    <div>
+      <p id="lorem_text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam hic in
+        voluptatum deserunt tempora similique voluptas modi quibusdam ab
+        sapiente! Aperiam sit quo, suscipit labore atque hic voluptatum.
+        Cupiditate, rem!
+      </p>
+      <label for="lorem_text_input" id="lorem_label"></label>
+      <input type="text" name="lorem_text" id="lorem_text_input" />
+      <button id="lorem_btn">Add lorem!</button>
+    </div>
     <script>
       let inputName = document.getElementById("name-input");
       let spanText = document.getElementById("span-name");
@@ -103,6 +125,11 @@ margin: ;}
       let ageText = document.getElementById("age_text");
       let ageValidText = document.getElementById("age_valid_text");
       let inputAge = document.getElementById("age-input");
+
+      let loremText = document.getElementById("lorem_text");
+      let loremTextInput = document.getElementById("lorem_text_input");
+      let loremBtn = document.getElementById("lorem_btn");
+
 
       sumbBtn.addEventListener("click", function () {
         let name = inputName.value.trim();
@@ -154,6 +181,18 @@ margin: ;}
           ageBtn.click();
         }
       });
+
+loremBtn.addEventListener('click', function( ) {
+
+  let loremCount = Number(loremTextInput.value);
+  let result = "Lorem ipsum.".repeat(loremCount);
+  loremText.textContent = result;
+
+
+
+
+})
+
     </script>
   </body>
 </html>
