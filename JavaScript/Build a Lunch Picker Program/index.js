@@ -8,6 +8,11 @@ function addLunchToEnd(arr, item) {
 addLunchToEnd(lunches, "Apple");
 console.log(lunches);
 
+addLunchToEnd(lunches, "Pizza");
+addLunchToEnd(lunches, "Burger");
+addLunchToEnd(lunches, "Sushi");
+console.log(lunches);
+
 function addLunchToStart(arr, item) {
   arr.unshift(item);
   console.log(item + " added to the start of the lunch menu.");
@@ -42,4 +47,25 @@ function removeFirstLunch(arr) {
 removeFirstLunch(lunches);
 console.log(lunches);
 
-function getRandomLunch(arr) {}
+function getRandomLunch(arr) {
+  if (arr.length > 0) {
+    let randomFood = arr[Math.floor(Math.random() * arr.length)];
+    console.log(`Randomly selected lunch: ${randomFood}`);
+  } else {
+    console.log("No lunches available.");
+  }
+}
+
+getRandomLunch(lunches);
+console.log(lunches);
+
+function showLunchMenu(arr) {
+  if (!arr.length) {
+    console.log("The menu is empty.");
+  }
+
+  return console.log("Menu items: " + arr.join(", "));
+}
+
+showLunchMenu(lunches);
+console.log(lunches);
