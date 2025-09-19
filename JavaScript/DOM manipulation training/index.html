@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>DOM учебная песочница (простая)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./style.css" />
+  <script src="index.js" defer></script>
+</head>
+<body>
+  <header class="row">
+    <h1>DOM Песочница</h1>
+    <div class="row gap">
+      <button id="btn-theme">Переключить тему</button>
+      <button id="btn-open-modal" aria-haspopup="dialog" aria-controls="modal">Открыть модалку</button>
+      <button id="btn-reset-all">Сбросить всё</button>
+    </div>
+  </header>
+
+  <main class="grid">
+    <!-- ЛЕВАЯ КОЛОНКА: Песочница текста -->
+    <section class="card">
+      <h2>Песочница текста</h2>
+
+      <div id="playground" data-default-font-size="16" class="box">
+        <p id="text">
+          Это пример текста. Твоя задача — научиться менять стили (размер, шрифт, отступы, цвета), классы и атрибуты с помощью JS.
+        </p>
+      </div>
+
+      <div class="row wrap gap">
+        <!-- Размер шрифта -->
+        <button id="btn-font-dec">A−</button>
+        <button id="btn-font-inc">A+</button>
+        <button id="btn-font-reset">Размер по умолчанию</button>
+
+        <!-- Семейство шрифта -->
+        <button class="btn-font-family" data-font="system">System</button>
+        <button class="btn-font-family" data-font="serif">Serif</button>
+        <button class="btn-font-family" data-font="mono">Mono</button>
+
+        <!-- Межбуквие -->
+        <button class="btn-letter" data-ls="0">LS 0</button>
+        <button class="btn-letter" data-ls="0.02">LS +</button>
+
+        <!-- Подсветка и фон -->
+        <button id="btn-toggle-highlight">Подсветить блок</button>
+        <button id="btn-bg-random">Случайный фон</button>
+        <button class="btn-accent" data-accent="primary">Акцент primary</button>
+        <button class="btn-accent" data-accent="violet">Акцент violet</button>
+      </div>
+    </section>
+
+    <!-- ПРАВАЯ КОЛОНКА: Простой список -->
+    <section class="card">
+      <h2>Список задач (простая TODO)</h2>
+
+      <div class="row wrap gap">
+        <button id="btn-add-item">Добавить</button>
+        <button id="btn-remove-selected">Удалить выбранные</button>
+        <button id="btn-duplicate-selected">Дублировать выбранные</button>
+        <button id="btn-move-up">Вверх</button>
+        <button id="btn-move-down">Вниз</button>
+      </div>
+
+      <ul id="todo" aria-label="список дел">
+        <li class="todo-item" data-id="1">
+          <label><input type="checkbox" class="pick" /> Подсветка блока (#playground) по клику</label>
+        </li>
+        <li class="todo-item" data-id="2">
+          <label><input type="checkbox" class="pick" /> Изменение размера шрифта у #text</label>
+        </li>
+        <li class="todo-item" data-id="3">
+          <label><input type="checkbox" class="pick" /> Переключение темы (data-theme на &lt;html&gt;)</label>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- МОДАЛКА -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-box">
+      <h3 id="modal-title">О проекте</h3>
+      <p>Это минимальная верстка для тренировки JS и DOM.</p>
+      <div class="row gap right">
+        <button id="btn-close-modal">Закрыть</button>
+        <button id="btn-understood">Понятно</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

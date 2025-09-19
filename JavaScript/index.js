@@ -138,3 +138,34 @@ function areYouPlayingBanjo(name) {
 
   return name;
 }
+
+function pyramid(symbol, n, start) {
+  let lines = [];
+
+  if (start === false) {
+    for (let i = 1; i <= n; i++) {
+      let spaces = " ".repeat(n - i);
+      let symbols = symbol.repeat(2 * i - 1);
+      lines.push(spaces + symbols);
+    }
+  } else {
+    for (let i = n; i >= 1; i--) {
+      let spaces = " ".repeat(n - i);
+      let symbols = symbol.repeat(2 * i - 1);
+      lines.push(spaces + symbols);
+    }
+  }
+  return "\n" + lines.join("\n") + "\n";
+}
+
+function getAverage(arr) {
+  let summ = arr.reduce((a, b) => a + b);
+  return summ / arr.length;
+
+}
+
+console.log(getAverage([92, 88, 12, 77, 57, 100, 67, 38, 97, 89]));
+
+function getGrade (arr) {
+  
+}

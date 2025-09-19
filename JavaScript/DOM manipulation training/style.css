@@ -1,0 +1,99 @@
+/* Очень простой базовый стиль */
+:root {
+    --bg: #ffffff;
+    --fg: #111111;
+    --card: #f5f5f5;
+    --border: #dddddd;
+    --accent: #7c3aed;   /* violet по умолчанию */
+    --primary: #06b6d4;  /* cyan как альтернативный акцент */
+  }
+  
+  html[data-theme="dark"] {
+    --bg: #0f172a;
+    --fg: #e2e8f0;
+    --card: #111827;
+    --border: #1f2937;
+  }
+  
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color: var(--fg);
+    background: var(--bg);
+  }
+  
+  .row { display: flex; align-items: center; }
+  .wrap { flex-wrap: wrap; }
+  .right { justify-content: flex-end; }
+  .gap { gap: 8px; }
+  
+  header { padding: 12px; border-bottom: 1px solid var(--border); }
+  h1, h2, h3 { margin: 0 0 8px; }
+  
+  .grid {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 1fr 1fr;
+    padding: 12px;
+  }
+  @media (max-width: 800px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+  
+  .card {
+    padding: 12px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  
+  .box {
+    border: 1px dashed var(--border);
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+  }
+  
+  /* Подсветка по классу */
+  .highlight {
+    outline: 2px dashed var(--primary);
+    outline-offset: 4px;
+  }
+  
+  /* Акцентный цвет применяется к <strong> внутри #text */
+  .accent-primary strong { color: var(--primary); }
+  .accent-violet strong  { color: var(--accent); }
+  
+  /* Список */
+  #todo { list-style: none; padding: 0; margin: 8px 0 0; }
+  #todo .todo-item {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px;
+    margin-bottom: 6px;
+    background: #fff;
+  }
+  html[data-theme="dark"] #todo .todo-item { background: #0b1224; }
+  
+  /* Модалка максимально простая */
+  .modal {
+    position: fixed;
+    inset: 0;
+    display: none;           /* включай через класс .open */
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.5);
+  }
+  .modal.open { display: flex; }
+  
+  .modal-box {
+    width: 90%;
+    max-width: 420px;
+    background: var(--card);
+    color: var(--fg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px;
+  }
+  
