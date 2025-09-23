@@ -234,3 +234,68 @@ function elDwn() {
   });
 }
 dwnBtn.addEventListener("click", elDwn);
+
+const dialog = document.getElementById("my-modal");
+const openButton = document.getElementById("open-modal");
+const closeButton = document.getElementById("close-modal");
+
+openButton.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+closeButton.addEventListener("click", () => {
+  dialog.close();
+});
+
+const person = {
+  name: "Alice",
+  age: 30,
+  city: "New York"
+};
+
+person.city = "Los Angeles";
+console.log(person.age);  // Alice
+console.log(person["name"]); // Alice
+console.log(person.city); // Los Angeles
+
+function changeCity(newCity, user) {
+  user.city = newCity;
+}
+
+const person2 = {
+  name: "Bob",
+  age: 25,
+  city: "San Francisco",
+
+  greet() {
+    console.log("Hello, my name is " + this.name);
+  }  
+};
+
+changeCity("Chicago", person2);
+console.log(person2.city); // Chicago
+
+changeCity("Chicago", person);
+console.log(person.city); // Chicago
+
+const person3 = {
+  name: "Alice",
+  age: 30
+};
+
+person.job = "Engineer"
+person["hobby"] = "Knitting"
+console.log("Person 1:", person);  // {name: 'Alice', age: 30, job: 'Engineer', hobby: 'Knitting'}console.log(person2); // {name: 'Bob', age: 25, city: 'Chicago'}
+console.log("Person 3:", person3); // {name: 'Alice', age: 30, job: 'Engineer', hobby: 'Knitting'}
+
+person2.greet(); // Hello, my name is Bob
+
+function deleteProperty(obj, prop) {
+  delete obj[prop];
+}
+deleteProperty(person2, "age");
+console.log(person2); // {name: 'Bob', city: 'Chicago', greet: ƒ}
+console.log(person.hasOwnProperty("name")); // true
+console.log(person2.hasOwnProperty("age")); // false
+console.log("name" in person);
+const btn = document.getElementById

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lightbox Viewer</title>
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header--title">Museum Gallery</h1>
+    </header>
+
+    <!-- Required gallery container with three thumbnails -->
+    <div class="gallery">
+      <img
+        class="gallery-item"
+        src="https://cdn.freecodecamp.org/curriculum/labs/stonehenge-thumbnail.jpg"
+        alt="Stonehenge thumbnail"
+      />
+      <img
+        class="gallery-item"
+        src="https://cdn.freecodecamp.org/curriculum/labs/storm-thumbnail.jpg"
+        alt="Storm thumbnail"
+      />
+      <img
+        class="gallery-item"
+        src="https://cdn.freecodecamp.org/curriculum/labs/trees-thumbnail.jpg"
+        alt="Trees thumbnail"
+      />
+    </div>
+
+    <!-- Lightbox overlay -->
+    <div class="lightbox">
+      <button id="close-btn" class="close-btn" aria-label="Close">&times;</button>
+      <img id="lightbox-image" class="lightbox-image" alt="Full size preview" src="" />
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+  </html>
+

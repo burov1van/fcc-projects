@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real Time Counter</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <h1 class="counter--title" id="counter-title">
+        This is title of my counter
+      </h1>
+      <label for="text-area"></label>
+      <textarea
+        id="text-input"
+        rows="5"
+        cols="30"
+        maxlength="50"
+        class="textarea"
+        placeholder="Write something here!"
+      ></textarea>
+      <p id="char-count">
+        Character Count: 0/50
+     </p>
+    </div>
+    <script src="script.js" defer></script>
+  </body>
+</html>
