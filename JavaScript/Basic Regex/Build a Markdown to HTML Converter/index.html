@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markdown to HTML Converter</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="hero">
+        <h1 class="hero__title">Markdown to HTML Converter</h1>
+        <p class="hero__subtitle">Type Markdown on the left, inspect raw HTML in the middle, preview the rendered result on the right.</p>
+      </header>
+      <main class="workspace">
+        <section class="panel panel--input">
+          <h2 class="panel__title">Markdown Input</h2>
+          <textarea id="markdown-input" class="panel__textarea" placeholder="# Welcome to the converter
+
+Type some Markdown here to see it turn into HTML."></textarea>
+        </section>
+        <section class="panel panel--code">
+          <h2 class="panel__title">Raw HTML Output</h2>
+          <pre id="html-output" class="panel__code"></pre>
+        </section>
+        <section class="panel panel--preview">
+          <h2 class="panel__title">HTML Preview</h2>
+          <div id="preview" class="panel__preview"></div>
+        </section>
+      </main>
+    </div>
+    <script src="script.js" defer></script>
+  </body>
+</html>
