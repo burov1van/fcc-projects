@@ -1,0 +1,36 @@
+/* Максимально простые стили для читаемости */
+html,
+body {
+  font-family: Arial, sans-serif;
+}
+body {
+  margin: 16px;
+}
+
+label,
+fieldset {
+  display: block;
+  margin-top: 10px;
+}
+input[type="text"],
+input[type="number"] {
+  display: block;
+  padding: 6px;
+  margin-top: 4px;
+}
+button {
+  margin-top: 14px;
+  padding: 8px 12px;
+}
+
+/* BEM-классы для простой формы */
+.page-title { margin: 0 0 12px; font-size: 20px; }
+
+.simple-form { max-width: 420px; }
+.simple-form__field { margin-top: 10px; }
+.simple-form__label { display: block; margin-bottom: 4px; }
+.simple-form__input { display: block; padding: 6px; }
+.simple-form__fieldset { margin-top: 10px; padding: 6px 8px; }
+.simple-form__legend { font-weight: bold; }
+.simple-form__radio { margin-right: 12px; }
+.simple-form__button { margin-top: 14px; padding: 8px 12px; }

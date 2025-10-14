@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Простая форма</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1 class="page-title">Простая форма</h1>
+
+    <form id="simple-form" class="simple-form">
+      <div class="simple-form__field">
+        <label class="simple-form__label" for="last-name">Фамилия</label>
+        <input class="simple-form__input" id="last-name" name="lastName" type="text" required />
+      </div>
+
+      <div class="simple-form__field">
+        <label class="simple-form__label" for="first-name">Имя</label>
+        <input class="simple-form__input" id="first-name" name="firstName" type="text" required />
+      </div>
+
+      <div class="simple-form__field">
+        <label class="simple-form__label" for="middle-name">Отчество</label>
+        <input class="simple-form__input" id="middle-name" name="middleName" type="text" />
+      </div>
+
+      <fieldset class="simple-form__fieldset">
+        <legend class="simple-form__legend">Пол</legend>
+        <label class="simple-form__radio"><input class="simple-form__radio-input" type="radio" name="gender" value="male" required/> Мужчина</label>
+        <label class="simple-form__radio"><input class="simple-form__radio-input" type="radio" name="gender" value="female" /> Женщина</label>
+      </fieldset>
+
+      <div class="simple-form__field">
+        <label class="simple-form__label" for="age">Возраст</label>
+        <input class="simple-form__input" id="age" name="age" type="number" min="0" max="120" step="1" required />
+      </div>
+
+      <button class="simple-form__button" type="submit">Отправить</button>
+    </form>
+
+    <script src="script.js"></script>
+  </body>
+  </html>

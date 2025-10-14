@@ -1,0 +1,245 @@
+/* Classic, simple light theme with clear UI states */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap');
+:root {
+  --bg: #fafafa;
+  --surface: #fffff0; /* ivory */
+  --text: #000000; /* black */
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --primary: #7db3ff; /* focus */
+  --primary-dark: #7c3aed; /* hover */
+  --danger: #d9534f; /* errors/surplus */
+  --success: #198754; /* success/deficit */
+  --radius: 6px;
+  /* Button gradient colors */
+  --btn-start: #8ec5ff; /* sky */
+  --btn-end: #a78bfa;   /* violet */
+  --btn-start-hover: #60a5fa; /* darker sky */
+  --btn-end-hover: #7c3aed;   /* darker violet */
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font: 16px/1.5 'Calibri', 'Source Sans 3', -apple-system, 'Segoe UI', Roboto, Helvetica, Arial,
+    'Apple Color Emoji', 'Segoe UI Emoji';
+  color: var(--text);
+  background: var(--bg);
+}
+
+h1 {
+  text-align: center;
+  margin: 24px 0 8px;
+  font-weight: 600;
+}
+
+.container {
+  width: 90%;
+  max-width: 680px;
+  margin: 16px auto 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+label,
+legend {
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Inputs */
+input,
+select,
+button {
+  font: inherit;
+  min-height: 44px; /* удобная зона клика */
+}
+
+input,
+select {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 10px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+input::placeholder,
+select::placeholder {
+  color: var(--muted);
+  opacity: 0.9;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.25);
+  outline: none;
+}
+
+input:disabled,
+select:disabled {
+  background: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Подсветка валидности только если поле не пустое */
+input:not(:placeholder-shown):valid,
+select:valid {
+  border-color: var(--success);
+}
+
+input:not(:placeholder-shown):invalid,
+select:invalid {
+  border-color: var(--danger);
+}
+
+/* Контейнеры состояний (если используете классы) */
+.has-error input,
+.has-error select {
+  border-color: var(--danger) !important;
+}
+.is-valid input,
+.is-valid select {
+  border-color: var(--success) !important;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  color: #fff;
+  background-image: linear-gradient(135deg, var(--btn-start), var(--btn-end));
+  background-color: transparent; /* fallback */
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  padding: 9px 14px;
+  font-weight: 600;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease,
+    transform 0.05s ease;
+}
+
+button:hover { background-image: linear-gradient(135deg, var(--btn-start-hover), var(--btn-end-hover)); }
+button:active {
+  transform: translateY(1px);
+}
+button:focus-visible {
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.35);
+  outline: none;
+}
+button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Loading state */
+button.is-loading {
+  position: relative;
+  pointer-events: none;
+}
+button.is-loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  width: 16px;
+  height: 16px;
+  margin-top: -8px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-top-color: rgba(255, 255, 255, 0);
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+fieldset {
+  margin: 12px 0 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px;
+}
+
+.controls {
+  display: flex;
+  align-items: end;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.output {
+  margin: 20px auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  text-align: center;
+}
+
+.output span {
+  font-weight: 700;
+}
+
+.surplus {
+  color: var(--danger);
+}
+.deficit {
+  color: var(--success);
+}
+.hide {
+  display: none;
+}
+
+/* Optional: icon inside field */
+.with-icon {
+  position: relative;
+}
+.with-icon input,
+.with-icon select {
+  padding-left: 36px;
+}
+.with-icon .icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  pointer-events: none;
+  font-size: 14px;
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+  .container {
+    padding: 16px;
+  }
+  button {
+    width: 100%;
+  }
+}
+
+.footer-btn_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
