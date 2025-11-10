@@ -1,0 +1,21 @@
+#root {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: left;
+}
+
+.logo {
+  height: 3rem;
+}
+
+.card {
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.read-the-docs {
+  color: #666;
+}

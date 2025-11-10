@@ -1,0 +1,156 @@
+﻿/* App shell */
+.App {
+  max-width: 640px;
+  margin: 64px auto;
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
+}
+
+/* Sections */
+.converter {
+  display: grid;
+  gap: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 4px;
+  border-bottom: 1px dashed var(--border);
+}
+
+.header img {
+  display: none; /* hide empty image slot */
+}
+
+.header h4 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.countainer { /* note: class name is used as-is in JSX */
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* Field groups */
+.left h4,
+.middle h4,
+.right h4,
+.result h4 {
+  margin: 0 0 8px;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-2);
+  color: var(--text);
+  box-shadow: 0 1px 0 rgba(2, 6, 23, 0.02) inset;
+  transition: border-color 120ms ease, box-shadow 120ms ease, background-color 120ms ease;
+}
+
+input[type="text"]::placeholder {
+  color: color-mix(in oklab, var(--muted) 75%, transparent);
+}
+
+input[type="text"]:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--primary) 15%, transparent);
+  background: #fff;
+}
+
+select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+    linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position: calc(100% - 16px) 50%, calc(100% - 12px) 50%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+/* Result */
+.result {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.result h5 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.result button {
+  height: 42px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--primary);
+  color: var(--primary-contrast);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  box-shadow: 0 6px 16px color-mix(in oklab, var(--primary) 35%, transparent);
+  transition: transform 120ms ease, filter 120ms ease, background-color 120ms ease;
+}
+
+.result button:hover {
+  filter: brightness(0.98);
+}
+
+.result button:active {
+  transform: translateY(1px);
+}
+
+/* Decorative image area (unused) */
+.image { display: none; }
+
+/* Responsive */
+@media (max-width: 640px) {
+  .App {
+    margin: 32px 16px;
+    padding: 16px;
+  }
+
+  .countainer {
+    grid-template-columns: 1fr;
+  }
+
+  .result {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .result button {
+    width: 100%;
+  }
+}

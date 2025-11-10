@@ -1,0 +1,33 @@
+ .container {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  background: #fff;
+}
+
+#otp-title {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+#otp-display {
+  margin: 0.25rem 0 0.5rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 1.25rem;
+}
+
+#otp-timer {
+  margin: 0;
+  color: #666;
+  font-size: 0.875rem;
+}
+
+#generate-otp-button {
+  align-self: flex-start;
+}
+
