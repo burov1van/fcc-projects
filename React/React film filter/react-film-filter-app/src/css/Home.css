@@ -1,0 +1,132 @@
+.home {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.search-form {
+  width: min(720px, 100%);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.5rem 0.5rem 1.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.85),
+    rgba(255, 228, 249, 0.75)
+  );
+  box-shadow: 0 35px 65px rgba(149, 134, 255, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.search-form::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      circle at 20% 20%,
+      rgba(255, 255, 255, 0.9),
+      transparent
+    ),
+    radial-gradient(circle at 80% 0%, rgba(173, 216, 255, 0.6), transparent 55%);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.75rem 0;
+  border: none;
+  background: transparent;
+  color: #2f2351;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  caret-color: #f65db0;
+  position: relative;
+  z-index: 1;
+}
+
+.search-input::placeholder {
+  color: var(--muted, rgba(31, 22, 52, 0.6));
+  letter-spacing: 0.05em;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.search-button {
+  flex-shrink: 0;
+  border-radius: 999px;
+  border: none;
+  background-image: var(
+    --accent-strong,
+    linear-gradient(125deg, #f856b6, #8f6aff)
+  );
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  box-shadow: var(--glow);
+  z-index: 1;
+}
+
+.movies-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: clamp(1.25rem, 3vw, 2rem);
+}
+
+.movies-grid > * {
+  animation: fadeIn 0.4s ease;
+}
+
+.loading {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  font-size: 0.85rem;
+  color: var(--muted, rgba(31, 22, 52, 0.6));
+}
+
+.home [class^="error-mess"] {
+  width: min(420px, 100%);
+  margin: 0 auto;
+  text-align: center;
+  padding: 1rem 1.5rem;
+  border-radius: 18px;
+  border: 1px solid rgba(248, 86, 182, 0.25);
+  color: #f856b6;
+  background: rgba(248, 86, 182, 0.08);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 639px) {
+  .search-form {
+    flex-direction: column;
+    border-radius: 28px;
+    padding: 1.25rem;
+  }
+
+  .search-button {
+    width: 100%;
+  }
+}

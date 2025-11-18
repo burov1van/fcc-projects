@@ -1,0 +1,29 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe1f5" />
+      <stop offset="100%" stop-color="#b7d5ff" />
+    </linearGradient>
+    <linearGradient id="tower" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#9fb7ff" stop-opacity="0.9" />
+    </linearGradient>
+  </defs>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="32" cy="32" r="29" stroke="url(#glow)" stroke-width="2" />
+    <path
+      d="M16 42h32M20 36h24M24 30h16M28 24h8"
+      stroke="url(#tower)"
+      stroke-width="3"
+    />
+    <path
+      d="M18 42v6h28v-6M26 30v12M38 30v12M32 24v18"
+      stroke="url(#tower)"
+      stroke-width="2.5"
+    />
+    <path
+      d="M32 18l5 6h-10l5-6z"
+      fill="url(#tower)"
+    />
+  </g>
+</svg>

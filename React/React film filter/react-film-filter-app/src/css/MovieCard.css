@@ -1,0 +1,185 @@
+.movie-card {
+  position: relative;
+  border-radius: 32px;
+  overflow: hidden;
+  background: linear-gradient(
+    150deg,
+    rgba(255, 255, 255, 0.95),
+    rgba(229, 239, 255, 0.9)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 60px rgba(149, 134, 255, 0.25);
+  isolation: isolate;
+}
+
+.movie-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+      circle at 30% 0%,
+      rgba(255, 206, 238, 0.4),
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 0%,
+      rgba(153, 209, 255, 0.45),
+      transparent 60%
+    );
+  z-index: -1;
+}
+
+.movie-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 35px 65px rgba(104, 83, 194, 0.35);
+    cursor: pointer;
+
+}
+
+.movie-poster {
+  position: relative;
+  aspect-ratio: 2 / 3;
+  width: 100%;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.movie-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.15) contrast(1.05);
+  transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+.movie-card:hover .movie-poster img {
+  transform: scale(1.06);
+  filter: saturate(1.25) contrast(1.1);
+}
+
+.movie-overlay,
+.movier-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(0, 0, 0, 0.35) 60%,
+    rgba(0, 0, 0, 0.55)
+  );
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 1.25rem;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.movie-card:hover .movie-overlay,
+.movie-card:hover .movier-overlay {
+  opacity: 1;
+}
+
+.favorite-btn {
+  position: relative;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  transition: transform 0.2s ease, color 0.2s ease;
+  pointer-events: auto;
+}
+
+.favorite-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0.2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.favorite-btn svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.favorite-btn:hover {
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+.favorite-btn:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.favorite-btn.active {
+  color: #ff6578;
+}
+
+.movie-info {
+  padding: 1.75rem 1.5rem 1.85rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.movie-info h3 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: #2f2351;
+}
+
+.movie-info p {
+  color: var(--muted, rgba(31, 22, 52, 0.6));
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.user-rating {
+  margin-top: auto;
+  font-size: 0.85rem;
+  color: #c960ff;
+}
+
+.rating-select {
+  margin-top: 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(31, 22, 52, 0.15);
+  background: rgba(255, 255, 255, 0.86);
+  color: inherit;
+  padding: 0.45rem 1rem;
+}
+
+@media (max-width: 768px) {
+  .movie-card {
+    border-radius: 24px;
+  }
+
+  .favorite-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .movie-info h3 {
+    letter-spacing: 0.18em;
+  }
+}

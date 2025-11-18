@@ -1,0 +1,103 @@
+:root {
+  font-family: "Space Grotesk", "Sen", "Inter", "Segoe UI", system-ui,
+    -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.65;
+  font-weight: 400;
+  color: #1f1634;
+  background-color: #fdf6ff;
+  --surface: rgba(255, 255, 255, 0.85);
+  --surface-alt: rgba(255, 255, 255, 0.55);
+  --line: rgba(31, 22, 52, 0.14);
+  --muted: rgba(31, 22, 52, 0.6);
+  --accent-gradient: linear-gradient(130deg, #ffd8f0, #cfe3ff 45%, #9ad8ff);
+  --accent-strong: linear-gradient(125deg, #f856b6, #8f6aff);
+  --glow: 0 25px 60px rgba(170, 151, 255, 0.35);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  background-color: #fdf6ff;
+}
+
+body {
+  margin: 0;
+  position: relative;
+  background: radial-gradient(circle at 10% 20%, #fff9fb, transparent 45%),
+    radial-gradient(circle at 90% 0%, #e5f2ff, transparent 40%),
+    linear-gradient(145deg, #fef6ff, #cbdfff 80%);
+  color: inherit;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #50406f;
+  text-decoration: none;
+  transition: opacity 0.25s ease;
+}
+
+a:hover {
+  opacity: 0.6;
+}
+
+button {
+  border-radius: 999px;
+  border: 1px solid transparent;
+  padding: 0.65em 1.65em;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: inherit;
+  background-image: var(--accent-gradient);
+  color: #1f1634;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glow);
+}
+
+button:focus-visible {
+  outline: 2px solid rgba(133, 108, 255, 0.4);
+  outline-offset: 4px;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+::selection {
+  background: rgba(168, 129, 255, 0.3);
+  color: #1c1331;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}

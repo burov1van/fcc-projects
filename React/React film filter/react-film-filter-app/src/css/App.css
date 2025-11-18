@@ -1,0 +1,37 @@
+.main-content {
+  flex: 1;
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding: 4rem clamp(1.25rem, 4vw, 2.5rem) 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  position: relative;
+  z-index: 1;
+  background: var(--surface, rgba(255, 255, 255, 0.85));
+  border: 1px solid var(--line);
+  box-shadow: 0 35px 70px rgba(129, 108, 255, 0.2);
+}
+
+.main-content::before {
+  content: "";
+  position: absolute;
+  inset: 1.5rem;
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.8), transparent);
+  pointer-events: none;
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding-top: 3rem;
+    gap: 1.5rem;
+    border-radius: 28px 28px 0 0;
+  }
+
+  .main-content::before {
+    inset: 1rem;
+  }
+}

@@ -1,0 +1,117 @@
+.fullcard-wrapper {
+  display: grid;
+  grid-template-columns: minmax(220px, 300px) 1fr;
+  grid-template-areas:
+    "poster header"
+    "poster info"
+    "poster text"
+    "poster buttons";
+  gap: 1.5rem 2rem;
+  padding: 2rem;
+  background: #ffffff;
+  border: 1px solid #dedede;
+  border-radius: 10px;
+  color: #222;
+}
+
+.fullcard-header {
+  grid-area: header;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ededed;
+}
+
+.fullcard-header__main-title {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 600;
+  color: #1b1b1b;
+  margin: 0;
+}
+
+.fullcard-poster {
+  grid-area: poster;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #f2f2f2;
+}
+
+.fullcard-poster img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fullcard-info {
+  grid-area: info;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem 1.5rem;
+}
+
+.fullcard-info p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #333;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 0.4rem;
+}
+
+.fullcard-text {
+  grid-area: text;
+  border-top: 1px solid #ededed;
+  padding-top: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.fullcard-buttons {
+  grid-area: buttons;
+  border-top: 1px solid #ededed;
+  padding-top: 1rem;
+}
+
+.fullcard-buttons button {
+  background: #3a6af0;
+  background-image: none;
+  border: none;
+  border-radius: 4px;
+  padding: 0.65rem 1.5rem;
+  letter-spacing: 0.05em;
+  text-transform: none;
+  font-weight: 600;
+  color: #fff;
+}
+
+.fullcard-buttons button:hover {
+  box-shadow: none;
+  opacity: 0.9;
+}
+
+@media (max-width: 900px) {
+  .fullcard-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "poster"
+      "info"
+      "text"
+      "buttons";
+  }
+
+  .fullcard-poster {
+    max-width: 340px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 540px) {
+  .fullcard-wrapper {
+    padding: 1.25rem;
+    border-radius: 6px;
+    gap: 1.25rem;
+  }
+
+  .fullcard-info {
+    grid-template-columns: 1fr;
+  }
+}
