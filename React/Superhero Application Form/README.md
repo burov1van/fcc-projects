@@ -1,16 +1,27 @@
-# React + Vite
+# Superhero Application Form
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This project recreates a “Join the League” application where aspiring heroes share their alias, origin story, abilities, and overall power rating. It demonstrates controlled inputs, checkbox arrays, and validation logic inside a Vite + React environment.
 
-Currently, two official plugins are available:
+## Features
+- Inputs for hero name, secret identity, and origin story (select dropdown populated from an array).
+- Checkbox list that allows applicants to select multiple powers; selections are tracked in state and displayed in the payload.
+- Range slider that captures a 1–100 self-assessment of overall power.
+- Submit button disables itself until every required field is completed, mirroring real-world form validation.
+- Minimal CSS (`App.css`, `index.css`) keeps the form centered and mobile-friendly.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- React 18 + Vite
+- Hooks: `useState` for controlled inputs
+- Plain CSS for layout/typography
+- ESLint (default Vite rules)
 
-## React Compiler
+## Getting Started
+```bash
+npm install
+npm run dev
+```
+Visit the printed URL to interact with the form. Use `npm run build` when you need a static bundle in `dist/`.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Purpose
+The form is a fun scenario for practicing common React form patterns—select dropdowns, checkbox groups, sliders, and dynamic button states—before transferring the same logic to more serious applications.

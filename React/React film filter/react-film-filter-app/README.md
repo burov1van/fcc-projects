@@ -1,16 +1,38 @@
-# React + Vite
+# React Film Filter App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This application lets you explore movies from [TMDB](https://www.themoviedb.org/) and surface related entertainment news headlines. It demonstrates client-side routing, async data fetching, and reusable card components inside a Vite + React stack.
 
-Currently, two official plugins are available:
+## Features
+- **Discover & Search** – Landing page pulls the current “Popular” feed from TMDB and lets you search by title with on-submit requests.
+- **Movie Details** – Each card links to `/movie/:id`, loading a full detail view on demand.
+- **Favorites Placeholder** – `/favorite` page shows the empty state you'd surface before wiring persistence.
+- **Entertainment News** – Fetches stories from TheNewsAPI and displays them in a secondary grid.
+- Loading/error handling keeps the UI responsive and communicates network issues.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- React 18 with Vite
+- React Router DOM for SPA navigation
+- Fetch API for TMDB and TheNewsAPI calls
+- Custom CSS modules located in `src/css`
 
-## React Compiler
+## Getting Started
+```bash
+npm install
+npm run dev
+```
+Open the dev server URL (default `http://localhost:5173`) to browse movies. Build for production with `npm run build`.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Configuration
+API keys are hard-coded in `src/services/api.js` (TMDB) and `src/services/thenewsapi.js` (TheNewsAPI). For real deployments, move them to environment variables:
 
-## Expanding the ESLint configuration
+```bash
+# .env
+VITE_TMDB_KEY=xxxxxxxx
+VITE_NEWS_KEY=xxxxxxxx
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Then reference them via `import.meta.env.VITE_TMDB_KEY`, etc.
+
+## Purpose
+The project was assembled to practice routing, multi-endpoint data flows, and responsive card layouts—skills that translate directly to streaming dashboards or media catalogs.

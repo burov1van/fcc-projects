@@ -1,16 +1,30 @@
-# React + Vite
+# Create Currency Converter App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This single-page React application lets users convert money between dozens of currencies by hitting the free [ExchangeRate-API](https://www.exchangerate-api.com/). It highlights controlled inputs, derived state, and remote data fetching with Axios inside a Vite project.
 
-Currently, two official plugins are available:
+## Features
+- Fetches the latest rates for the selected base currency and caches them in component state.
+- Dropdowns for “From” and “To” codes are populated dynamically from the API response.
+- Conversion runs automatically whenever the amount, base, or target currency changes, with a manual **Convert** button for reassurance.
+- Responsive layout and dedicated CSS modules (`App.css`, `index.css`) keep the converter centered alongside an illustration panel.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- React 18 with Vite
+- Axios for HTTP requests
+- Modern CSS (flexbox, custom fonts)
+- ESLint (default Vite rules)
 
-## React Compiler
+## Getting Started
+```bash
+npm install
+npm run dev
+```
+Open the printed local URL (typically `http://localhost:5173`) to use the converter. To create a production build, run `npm run build` and serve the contents of `dist/`.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## API Notes
+- Requests hit `https://open.er-api.com/v6/latest/{BASE}` and rely on the free tier (no key required).
+- Rates are refreshed whenever the “From” currency changes; handle upstream quotas by avoiding rapid changes in production.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Purpose
+This project was built to practice form state, side effects (`useEffect`), and data transformation in React while delivering a practical tool for comparing currencies.
