@@ -1,5 +1,4 @@
-﻿/* App shell */
-.App {
+﻿.App {
   max-width: 640px;
   margin: 64px auto;
   padding: 24px;
@@ -9,7 +8,6 @@
   box-shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
 }
 
-/* Sections */
 .converter {
   display: grid;
   gap: 20px;
@@ -24,7 +22,7 @@
 }
 
 .header img {
-  display: none; /* hide empty image slot */
+  display: none;
 }
 
 .header h4 {
@@ -35,13 +33,12 @@
   color: var(--text);
 }
 
-.countainer { /* note: class name is used as-is in JSX */
+.countainer {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
 }
 
-/* Field groups */
 .left h4,
 .middle h4,
 .right h4,
@@ -64,7 +61,8 @@ select {
   background: var(--surface-2);
   color: var(--text);
   box-shadow: 0 1px 0 rgba(2, 6, 23, 0.02) inset;
-  transition: border-color 120ms ease, box-shadow 120ms ease, background-color 120ms ease;
+  transition: border-color 120ms ease, box-shadow 120ms ease,
+    background-color 120ms ease;
 }
 
 input[type="text"]::placeholder {
@@ -120,7 +118,8 @@ select {
   letter-spacing: 0.01em;
   cursor: pointer;
   box-shadow: 0 6px 16px color-mix(in oklab, var(--primary) 35%, transparent);
-  transition: transform 120ms ease, filter 120ms ease, background-color 120ms ease;
+  transition: transform 120ms ease, filter 120ms ease,
+    background-color 120ms ease;
 }
 
 .result button:hover {
@@ -131,10 +130,10 @@ select {
   transform: translateY(1px);
 }
 
-/* Decorative image area (unused) */
-.image { display: none; }
+.image {
+  display: none;
+}
 
-/* Responsive */
 @media (max-width: 640px) {
   .App {
     margin: 32px 16px;

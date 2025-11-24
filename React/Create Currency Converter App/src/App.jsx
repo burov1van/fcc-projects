@@ -72,7 +72,6 @@ export default function App() {
           <div className="result">
             <h4>Conveter amount</h4>
             <h5>{amount + " " + from + " = " + output + " " + to}</h5>
-            <button onClick={handleConvert}>Convert</button>
           </div>
         </div>
       </div>
