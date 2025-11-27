@@ -17,7 +17,7 @@ function TicTacToe() {
         {board.map((b, index) => {
           return (
             <button
-            id="reset"
+              id="reset"
               key={index}
               className="cell square"
               onClick={() => handleClick(index)}

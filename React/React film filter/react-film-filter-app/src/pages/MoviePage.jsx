@@ -4,7 +4,6 @@ import { getFullMovieInfo } from "../services/api";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-
 export default function MoviePage() {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);

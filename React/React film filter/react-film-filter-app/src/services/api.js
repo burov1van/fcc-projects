@@ -10,8 +10,8 @@ export const getPopularMovies = async () => {
 export const searchMovies = async (query) => {
   const resp = await fetch(
     `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(
-      query
-    )}`
+      query,
+    )}`,
   );
 
   if (!resp.ok) {
@@ -21,11 +21,8 @@ export const searchMovies = async (query) => {
   return data.results;
 };
 
-
 export const getFullMovieInfo = async (id) => {
-  const resp = await fetch(
-    `${BASE_URL}/movie/${id}?api_key=${API_KEY}`
-  );
+  const resp = await fetch(`${BASE_URL}/movie/${id}?api_key=${API_KEY}`);
 
   if (!resp.ok) {
     throw new Error("Ошибка при получении информации");

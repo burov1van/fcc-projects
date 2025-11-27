@@ -1,16 +1,34 @@
-# React + Vite
+# Tic Tac Toe (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Simple beginner project where I built a 3x3 Tic Tac Toe game with React and Vite. You can play for two players on one screen, see whose turn it is, and reset the board at any time.
 
-Currently, two official plugins are available:
+## What it includes
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 3x3 board with win and draw detection
+- Turn indicator for X or O
+- Disabled buttons for taken cells
+- Reset button to start a new game
 
-## React Compiler
+## Tech stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React with Vite
+- `useState` hooks for game logic
+- Basic CSS grid for layout and buttons
 
-## Expanding the ESLint configuration
+## How to run
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the dev server:
+   ```bash
+   npm run dev
+   ```
+3. Open the link from the terminal (usually `http://localhost:5173/`).
+
+## Improvements I want to add
+
+- Highlight the winning line
+- Scoreboard for X and O
+- Small click animation on each cell

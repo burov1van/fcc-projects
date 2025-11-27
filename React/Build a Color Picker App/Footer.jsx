@@ -11,7 +11,12 @@ export const ColorPicker = () => {
   return (
     <div id="color-picker-container" style={{ backgroundColor: color }}>
       <p style={{ marginBottom: "1rem" }}>Выбирай цвет в палитре!</p>
-      <input type="color" id="color-input" onChange={handleChange} value={color}></input>
+      <input
+        type="color"
+        id="color-input"
+        onChange={handleChange}
+        value={color}
+      ></input>
     </div>
   );
 };

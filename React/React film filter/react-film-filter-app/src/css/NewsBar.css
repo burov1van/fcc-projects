@@ -128,7 +128,9 @@
   text-transform: uppercase;
   display: inline-flex;
   justify-content: center;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .newsbar-button:hover {

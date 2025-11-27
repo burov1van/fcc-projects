@@ -1,9 +1,8 @@
 import "../css/NewsBar.css";
 import { memo } from "react";
 
-
 function NewsBar({ article }) {
-    console.log("NewsBar");
+  console.log("NewsBar");
   const { title, image_url, snippet, url } = article;
   return (
     <article className="newsbar-card">
@@ -17,12 +16,7 @@ function NewsBar({ article }) {
         </div>
       )}
       <p className="newsbar-text">{snippet}</p>
-      <a
-        className="newsbar-button"
-        href={url}
-        target="_blank"
-        rel="noreferrer"
-      >
+      <a className="newsbar-button" href={url} target="_blank" rel="noreferrer">
         Read news
       </a>
     </article>

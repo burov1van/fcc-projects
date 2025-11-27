@@ -3,7 +3,7 @@ const BASE_URL = "https://api.thenewsapi.com/v1";
 
 export const getAllNews = async () => {
   const resp = await fetch(
-    `${BASE_URL}/news/top?api_token=${API_KEY}&locale=us&category=entertainment&search=movie&limit=3`
+    `${BASE_URL}/news/top?api_token=${API_KEY}&locale=us&category=entertainment&search=movie&limit=3`,
   );
   if (!resp.ok) {
     throw new Error("Ошибка при получении новостей");

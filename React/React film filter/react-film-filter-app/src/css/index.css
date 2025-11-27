@@ -1,6 +1,13 @@
 :root {
-  font-family: "Space Grotesk", "Sen", "Inter", "Segoe UI", system-ui,
-    -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family:
+    "Space Grotesk",
+    "Sen",
+    "Inter",
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
   line-height: 1.65;
   font-weight: 400;
   color: #1f1634;
@@ -36,7 +43,8 @@ body {
 body {
   margin: 0;
   position: relative;
-  background: radial-gradient(circle at 10% 20%, #fff9fb, transparent 45%),
+  background:
+    radial-gradient(circle at 10% 20%, #fff9fb, transparent 45%),
     radial-gradient(circle at 90% 0%, #e5f2ff, transparent 40%),
     linear-gradient(145deg, #fef6ff, #cbdfff 80%);
   color: inherit;
@@ -72,7 +80,9 @@ button {
   background-image: var(--accent-gradient);
   color: #1f1634;
   cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }

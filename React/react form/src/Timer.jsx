@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import "./Timer.css";
 
-
 export default function Timer() {
   const [time, setTime] = useState(null);
   const intervalRef = useRef(null);
@@ -21,15 +20,14 @@ export default function Timer() {
     clearInterval(intervalRef.current);
     resumeTimeRef.current = now;
   };
-  
-    const handleResume = () => {
-  setTime(Date.now());
+
+  const handleResume = () => {
+    setTime(Date.now());
 
     intervalRef.current = setInterval(() => {
       setTime(Date.now());
-    }, 10);    
+    }, 10);
   };
-
 
   let timePassed = (time - now) / 1000;
   return (

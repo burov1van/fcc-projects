@@ -24,8 +24,7 @@ function App() {
   const [realName, setRealName] = useState("");
   const [powerSource, setPowerSource] = useState("");
   const [powers, setPowers] = useState([]);
-    const [ratio, setRatio] = useState(0);
-
+  const [ratio, setRatio] = useState(0);
 
   const handlePowersChange = (e) => {
     const { value, checked } = e.target;
@@ -87,11 +86,13 @@ function App() {
           ))}
         </label>
 
-        <label className="section column">1 to 100 rate your power
-          <input type="range" 
-          value={ratio}
-          onChange={(e) => setRatio(e.target.value)}
-           />
+        <label className="section column">
+          1 to 100 rate your power
+          <input
+            type="range"
+            value={ratio}
+            onChange={(e) => setRatio(e.target.value)}
+          />
         </label>
         <button
           className="submit-btn"

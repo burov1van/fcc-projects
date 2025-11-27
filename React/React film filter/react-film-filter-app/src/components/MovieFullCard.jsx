@@ -18,12 +18,13 @@ export default function MovieFullCard({ movie }) {
     overview,
     homepage,
   } = movie;
+
   const openHomePage = () => {
     if (homepage) {
       window.open(homepage, "_blank");
     }
   };
-const releaseYear = release_date?.split("-")[0];
+  const releaseYear = release_date?.split("-")[0];
 
   return (
     <div className="fullcard-wrapper">

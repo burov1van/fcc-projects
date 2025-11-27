@@ -31,7 +31,9 @@
   background-color: #fafafa;
   cursor: pointer;
   color: #222;
-  transition: background-color 0.25s ease, color 0.25s ease;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
   display: flex;
   justify-content: center;
   align-items: center;

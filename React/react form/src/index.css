@@ -1,5 +1,5 @@
 :root {
-font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   line-height: 1.5;
   font-weight: 400;
   color: #111;
@@ -40,7 +40,9 @@ button {
   font-weight: 500;
   font-family: inherit;
   cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
 }
 button:hover {
   background-color: #f7f7f7;

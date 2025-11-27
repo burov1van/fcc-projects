@@ -7,21 +7,15 @@ import Counter from "./Counter.jsx";
 
 import "./App.css";
 
-
-
 export function App() {
-
-
   return (
     <>
-      <Header /> 
-      <OTPGenerator /> 
-      <Timer /> 
+      <Header />
+      <OTPGenerator />
+      <Timer />
       <Form />
       <SimpleForm />
       <Counter />
-
-
     </>
   );
 }

@@ -2,10 +2,9 @@ import React from "react";
 import "./OTPGenerator.css";
 const { useState, useEffect, useRef } = React;
 
-
 export const OTPGenerator = () => {
   const [displayText, setDisplayText] = useState(
-    "Click 'Generate OTP' to get a code"
+    "Click 'Generate OTP' to get a code",
   );
   const [hasClicked, setHasClicked] = useState(false);
   const [isDisabled, setIsDisabled] = useState(false);
@@ -59,8 +58,8 @@ export const OTPGenerator = () => {
         {!hasClicked
           ? ""
           : isDisabled
-          ? `Expires in: ${secondLeft} seconds`
-          : "OTP expired. Click the button to generate a new OTP."}
+            ? `Expires in: ${secondLeft} seconds`
+            : "OTP expired. Click the button to generate a new OTP."}
       </p>
 
       <button

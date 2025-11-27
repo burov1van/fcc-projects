@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useCallback } from "react";
 import MovieCard from "../components/MovieCard";
-import { searchMovies, getPopularMovies } from "../services/api";
-import "../css/Home.css";
 import NewsBar from "../components/NewsBar";
+import WeatherSummary from "../components/WeatherSummary";
+import { searchMovies, getPopularMovies } from "../services/api";
 import { getAllNews } from "../services/thenewsapi";
+import { getWeather } from "../services/weatherapi";
+import "../css/Home.css";
 
 export default function Home() {
   console.log("Home");
@@ -11,10 +13,13 @@ export default function Home() {
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
   const [news, setNews] = useState([]);
-
+  const [weatherData, setWeatherData] = useState(null);
+  const [weatherLoading, setWeatherLoading] = useState(true);
   const [moviesLoading, setMoviesLoading] = useState(true);
   const [newsLoading, setNewsLoading] = useState(true);
   const trimmedQuery = searchQuiery.trim();
+  const [coords, setCoords] = useState(null);
+  const [geoError, setGeoError] = useState(null);
 
   const loadPopulaeMovies = async () => {
     setMoviesLoading(true);
@@ -46,6 +51,46 @@ export default function Home() {
     loadActualNews();
   }, []);
 
+  useEffect(() => {
+    if (!navigator.geolocation) {
+      setGeoError("Geolocation is not supported by your browser");
+      setWeatherLoading(false);
+      setCoords({ lat: 47.558, lon: 7.573 });
+
+      return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords;
+        setCoords({ lat: latitude, lon: longitude });
+      },
+      (error) => {
+        console.error(error);
+        setGeoError("Permission denied or error getting location");
+        setWeatherLoading(false);
+      },
+    );
+  }, []);
+
+  useEffect(() => {
+    if (!coords) return;
+
+    const loadActualWeatherData = async () => {
+      try {
+        const actualWeatherData = await getWeather(coords.lat, coords.lon);
+        setWeatherData(actualWeatherData);
+      } catch (err) {
+        console.log(err);
+        setError("Failed to load weather...");
+      } finally {
+        setWeatherLoading(false);
+      }
+    };
+
+    loadActualWeatherData();
+  }, [coords]);
+
   const handleSearch = useCallback(
     async (e) => {
       e.preventDefault();
@@ -64,7 +109,7 @@ export default function Home() {
         setMoviesLoading(false);
       }
     },
-    [trimmedQuery, moviesLoading]
+    [trimmedQuery, moviesLoading],
   );
 
   useEffect(() => {
@@ -87,7 +132,7 @@ export default function Home() {
           Search
         </button>
       </form>
-      {error && <div className="error-messаge">{error}</div>}
+      {error && <div className="error-mess��ge">{error}</div>}
 
       {moviesLoading ? (
         <div className="loading">Content is loading...</div>
@@ -112,6 +157,11 @@ export default function Home() {
           </div>
         </section>
       )}
+      <div>
+        {geoError && <div className="weather-error">{geoError}</div>}
+
+        <WeatherSummary weatherData={weatherData} loading={weatherLoading} />
+      </div>
     </div>
   );
 }

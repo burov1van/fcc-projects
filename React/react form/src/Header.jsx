@@ -1,7 +1,7 @@
 export function Header() {
   return (
     <header className="header">
-        <div className="logo"></div>
+      <div className="logo"></div>
       <ul>
         <li>
           <a href="">Main</a>

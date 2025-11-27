@@ -7,16 +7,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.development.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.26.3/babel.min.js"></script>
     <link rel="stylesheet" href="styles.css" />
-    <script data-plugins="transform-modules-umd" type="text/babel" src="Counter.jsx"></script>
+    <script
+      data-plugins="transform-modules-umd"
+      type="text/babel"
+      src="Counter.jsx"
+    ></script>
   </head>
   <body>
     <div id="root"></div>
-    <script data-plugins="transform-modules-umd" type="text/babel" data-presets="react">
-      import { Counter } from './Counter.jsx';
-      const root = ReactDOM.createRoot(document.getElementById('root'));
+    <script
+      data-plugins="transform-modules-umd"
+      type="text/babel"
+      data-presets="react"
+    >
+      import { Counter } from "./Counter.jsx";
+      const root = ReactDOM.createRoot(document.getElementById("root"));
       root.render(<Counter />);
     </script>
   </body>
-  
 </html>
-
