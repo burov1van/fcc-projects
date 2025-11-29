@@ -1,0 +1,27 @@
+.stars-wrapper {
+  background: #ffffff;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stars-wrapper h1 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0f0f0f;
+}
+
+.stars-counteiner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.stars-counteiner svg {
+  cursor: pointer;
+}
