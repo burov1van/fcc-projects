@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="main-info">
+        <header class="header">
+          <h2 class="main-info-title" id="location"></h2>
+        </header>
+        <div class="main-info-first">
+          <div class="main-temperature" id="main-temperature-block">
+            <span id="main-temperature"></span>° C
+          </div>
+          <div id="weather-main"></div>
+        </div>
+
+        <div class="main-info-second">
+          <div class="humidity" id="humidity-block">
+            Humidity: <span id="humidity"></span>%
+          </div>
+          <div class="feels-like" id="feels-like-block">
+            Feels Like: <span id="feels-like"></span>° C
+          </div>
+        </div>
+
+        <div class="main-info-third">
+          <div>
+            <div class="wind" id="wind-block">
+              Wind: <span id="wind"></span> m/s
+            </div>
+            <div class="wind-gust" id="wind-gust-block">
+              Gusts: <span id="wind-gust"></span>
+            </div>
+          </div>
+          <div><img src="" alt="" id="weather-icon" /></div>
+        </div>
+      </div>
+      <div class="panel">
+        <form action="" class="weather-form">
+          <label for="weather-form-select"> Weather for: </label>
+          <select name="weather-form-select" id="weather-form-select">
+            <option value=""></option>
+            <option value="new york">New York</option>
+            <option value="los angeles">Los Angeles</option>
+            <option value="chicago">Chicago</option>
+            <option value="paris">Paris</option>
+            <option value="tokyo">Tokyo</option>
+            <option value="london">London</option>
+          </select>
+
+          <button class="weather-form-btn" id="get-weather-btn">
+            Get Weather
+          </button>
+        </form>
+      </div>
+    </div>
+    <script src="index.js" defer></script>
+  </body>
+</html>
