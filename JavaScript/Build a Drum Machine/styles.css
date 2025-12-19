@@ -1,0 +1,45 @@
+body {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  font-family: Arial, sans-serif;
+}
+
+#drum-machine {
+  width: 300px;
+  text-align: center;
+}
+
+#pad-bank {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.drum-pad {
+  background: #444;
+  color: white;
+  padding: 20px;
+  cursor: pointer;
+  user-select: none;
+}
+
+#display {
+  margin-top: 20px;
+  padding: 10px;
+  background: #eee;
+}
+
+#play-all {
+  margin-top: 15px;
+  width: 100%;
+  padding: 12px;
+  background: #222;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#play-all:hover {
+  background: #333;
+}
