@@ -25,7 +25,7 @@ const playAllSounds = () => {
   display.innerText = "All";
 };
 
-pads.forEach(pad => {
+pads.forEach((pad) => {
   pad.addEventListener("click", () => {
     const key = pad.innerText;
     playSound(key);
